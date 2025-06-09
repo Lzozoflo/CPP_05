@@ -15,6 +15,8 @@
 #include "AForm.hpp"
 #include "Bureaucrat.hpp"
 
+#include <ctime>
+#include <cstdlib>
 
 /*---------------constructor------Canonical-------destructor----------------*/
 
@@ -51,7 +53,20 @@ RobotomyRequestForm::RobotomyRequestForm( std::string target) : AForm(target, 72
 
 void RobotomyRequestForm::execute(Bureaucrat const & executor) const
 {
-	(void)executor;
+	if (executor.getGrade() > this->getExecGrade())
+		throw Bureaucrat::GradeTooLowException();
+	else if (this->getSigned() == false)
+		throw AForm::FormNotSignedExeception();
+	else
+	{
+		std::cout << "Makes some drilling noises." << std::endl;
+		srand(time(0));
+		int r = rand() % 2;
+		if (r % 2 == 1)
+			std::cout << this->getName() <<" has been robotomized successfully (50% of the time)." << std::endl;
+		else
+			std::cout << "The robotomy failed." << std::endl;
+	}
 	// RobotomyRequestForm: Required grades: sign 72, exec 45
 	// Makes some drilling noises. Then, informs that <target> has been robotomized
 	// successfully 50% of the time. Otherwise, informs that the robotomy failed.

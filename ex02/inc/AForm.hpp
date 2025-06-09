@@ -6,7 +6,7 @@
 /*   By: fcretin <fcretin@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/06 13:33:43 by fcretin           #+#    #+#             */
-/*   Updated: 2025/06/08 16:58:07 by fcretin          ###   ########.fr       */
+/*   Updated: 2025/06/09 10:03:55 by fcretin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -65,21 +65,21 @@ class AForm
 			}
 		};
 
-		// class GradeTooHighException : public std::exception
-		// {
-		// 	public:
-		// 	const char* what() const throw() {
-		// 		return "Grade too high.";
-		// 	}
-		// };
+		class GradeTooHighException : public std::exception
+		{
+			public:
+			const char* what() const throw() {
+				return "Grade too high.";
+			}
+		};
 
-		// class GradeTooLowException : public std::exception
-		// {
-		// 	public:
-		// 	const char* what() const throw() {
-		// 		return "Grade too low.";
-		// 	}
-		// };
+		class GradeTooLowException : public std::exception
+		{
+			public:
+			const char* what() const throw() {
+				return "Grade too low.";
+			}
+		};
 
 	// }
 };
