@@ -6,7 +6,7 @@
 /*   By: fcretin <fcretin@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/25 11:06:45 by fcretin           #+#    #+#             */
-/*   Updated: 2025/06/09 10:28:09 by fcretin          ###   ########.fr       */
+/*   Updated: 2025/06/12 11:13:43 by fcretin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,23 +44,23 @@ int main()
 	// 	std::cout << e.what() << std::endl;
 	// }
 
-	// try
-	// {
-	// 	// Form f("name", 149, 142);
-	// 	Bureaucrat bob("bob", 150);
-	// 	std::cout << bob << std::endl;
-	// 	bob.upGrade(1);
-	// 	// bob.signForm(f);
-	// 	// std::cout << f<< std::endl;
-	// 	bob.upGrade(1);
-	// 	std::cout << bob<< std::endl;
-	// 	bob.downGrade(2);
-	// 	std::cout << bob<< std::endl;
-	// }
-	// catch (const std::exception &e)
-	// {
-	// 	std::cout << e.what() << std::endl;
-	// }
+	try
+	{
+		// AForm f("name", 149, 142);
+		Bureaucrat bob("bob", 150);
+		std::cout << bob << std::endl;
+		bob.upGrade(1);
+		// bob.signForm(f);
+		// std::cout << f<< std::endl;
+		bob.upGrade(1);
+		std::cout << bob<< std::endl;
+		bob.downGrade(2);
+		std::cout << bob<< std::endl;
+	}
+	catch (const std::exception &e)
+	{
+		std::cout << e.what() << std::endl;
+	}
 
 	std::cout << "\n------------scf------------\n" << std::endl;
 
@@ -71,7 +71,7 @@ int main()
 		bob.signForm(scf);
 		scf->execute(bob);
 
-		// delete scf; ??
+		delete scf;
 	}
 	catch(const std::exception& e)
 	{
@@ -87,7 +87,7 @@ int main()
 		bob.signForm(rrf);
 		rrf->execute(bob);
 
-		// delete rrf; ??
+		delete rrf;
 	}
 	catch(const std::exception& e)
 	{
@@ -103,7 +103,7 @@ int main()
 		bob.signForm(ppf);
 		ppf->execute(bob);
 
-		// delete ppf; ??
+		delete ppf;
 	}
 	catch(const std::exception& e)
 	{

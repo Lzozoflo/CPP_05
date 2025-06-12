@@ -6,7 +6,7 @@
 /*   By: fcretin <fcretin@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/06 13:33:43 by fcretin           #+#    #+#             */
-/*   Updated: 2025/06/09 10:03:55 by fcretin          ###   ########.fr       */
+/*   Updated: 2025/06/12 08:44:43 by fcretin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,7 +40,7 @@ class AForm
 	// }
 	public:
 	// {
-		~AForm( void );									//Canonical
+		virtual ~AForm( void );									//Canonical
 
 
 		/*------Constructor------*/

@@ -53,10 +53,10 @@ RobotomyRequestForm::RobotomyRequestForm( std::string target) : AForm(target, 72
 
 void RobotomyRequestForm::execute(Bureaucrat const & executor) const
 {
-	if (executor.getGrade() > this->getExecGrade())
-		throw Bureaucrat::GradeTooLowException();
-	else if (this->getSigned() == false)
+	if (this->getSigned() == false)
 		throw AForm::FormNotSignedExeception();
+	else if (executor.getGrade() > this->getExecGrade())
+		throw Bureaucrat::GradeTooLowException();
 	else
 	{
 		std::cout << "Makes some drilling noises." << std::endl;

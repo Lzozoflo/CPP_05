@@ -52,10 +52,10 @@ ShrubberyCreationForm::ShrubberyCreationForm( std::string target) : AForm(target
 
 void ShrubberyCreationForm::execute(Bureaucrat const & executor) const
 {
-	if (executor.getGrade() > this->getExecGrade())
-		throw Bureaucrat::GradeTooLowException();
-	else if (this->getSigned() == false)
+	if (this->getSigned() == false)
 		throw AForm::FormNotSignedExeception();
+	else if (executor.getGrade() > this->getExecGrade())
+		throw Bureaucrat::GradeTooLowException();
 	else
 	{
 		std::string filename =this->getName() + "_shrubbery";
