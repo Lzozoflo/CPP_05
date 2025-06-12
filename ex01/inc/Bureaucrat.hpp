@@ -6,7 +6,7 @@
 /*   By: fcretin <fcretin@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/06 13:33:30 by fcretin           #+#    #+#             */
-/*   Updated: 2025/06/06 16:11:30 by fcretin          ###   ########.fr       */
+/*   Updated: 2025/06/12 15:11:17 by fcretin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,7 +44,7 @@ class Bureaucrat
 
 
 		/*------Constructor------*/
-		Bureaucrat( std::string name, int grade );
+		Bureaucrat( std::string &name, int grade );
 
 
 		/*------func------*/

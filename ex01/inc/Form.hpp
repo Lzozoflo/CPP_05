@@ -6,7 +6,7 @@
 /*   By: fcretin <fcretin@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/06 13:33:43 by fcretin           #+#    #+#             */
-/*   Updated: 2025/06/08 11:17:25 by fcretin          ###   ########.fr       */
+/*   Updated: 2025/06/12 15:11:09 by fcretin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,7 +45,7 @@ class Form
 
 
 		/*------Constructor------*/
-		Form( std::string name, int beSigned, int beExec);
+		Form( std::string &name, int beSigned, int beExec);
 
 
 		/*------Func------*/

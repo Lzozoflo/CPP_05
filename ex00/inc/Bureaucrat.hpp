@@ -42,7 +42,7 @@ class Bureaucrat
 
 
 		/*------Constructor------*/
-		Bureaucrat( std::string name, int grade );
+		Bureaucrat( std::string &name, int grade );
 		/*------func------*/
 		const std::string getName() const;
 		int getGrade() const;

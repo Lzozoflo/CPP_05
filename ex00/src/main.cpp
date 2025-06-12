@@ -6,7 +6,7 @@
 /*   By: fcretin <fcretin@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/25 11:06:45 by fcretin           #+#    #+#             */
-/*   Updated: 2025/06/08 10:28:53 by fcretin          ###   ########.fr       */
+/*   Updated: 2025/06/12 15:15:04 by fcretin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,7 +38,8 @@ int main()
 
 	try
 	{
-		Bureaucrat bob("mama", 150);
+		std::string str = "mama";
+		Bureaucrat bob(str, 150);
 		std::cout << bob << std::endl;
 		bob.upGrade(1);
 		bob.upGrade(1);

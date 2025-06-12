@@ -6,7 +6,7 @@
 /*   By: fcretin <fcretin@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/06 16:12:21 by fcretin           #+#    #+#             */
-/*   Updated: 2025/06/08 11:23:18 by fcretin          ###   ########.fr       */
+/*   Updated: 2025/06/12 15:11:02 by fcretin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,7 +41,7 @@ Form::~Form( void )
 
 /*------Constructor------*/
 
-Form::Form( std::string name, int beSigned, int beExec) : _Name(name), _SignGrade(beSigned), _ExecGrade(beExec), _Signed(false)
+Form::Form( std::string &name, int beSigned, int beExec) : _Name(name), _SignGrade(beSigned), _ExecGrade(beExec), _Signed(false)
 {}
 
 

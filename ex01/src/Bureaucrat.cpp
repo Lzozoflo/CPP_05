@@ -6,7 +6,7 @@
 /*   By: fcretin <fcretin@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/05 17:51:20 by fcretin           #+#    #+#             */
-/*   Updated: 2025/06/08 10:38:57 by fcretin          ###   ########.fr       */
+/*   Updated: 2025/06/12 15:11:29 by fcretin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,7 +33,7 @@ Bureaucrat::~Bureaucrat( void ){}
 
 /*---------------constructor------Canonical-------destructor----------------*/
 
-Bureaucrat::Bureaucrat( std::string name, int grade )	:	_Name(name), _Grade(grade){
+Bureaucrat::Bureaucrat( std::string &name, int grade )	:	_Name(name), _Grade(grade){
 	if (grade > 150)
 		throw GradeTooLowException();
 	if (grade < 0)
