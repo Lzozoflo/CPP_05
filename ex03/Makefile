@@ -30,6 +30,7 @@ HEADERS_D			:=		./incs/
 
 HEADERS				:=		AForm.hpp					\
 							Bureaucrat.hpp				\
+							Intern.hpp					\
 							PresidentialPardonForm.hpp	\
 							RobotomyRequestForm.hpp		\
 							ShrubberyCreationForm.hpp
@@ -38,6 +39,7 @@ HEADERS				:=		AForm.hpp					\
 
 SRC					:=		AForm.cpp					\
 							Bureaucrat.cpp				\
+							Intern.cpp					\
 							main.cpp					\
 							PresidentialPardonForm.cpp	\
 							RobotomyRequestForm.cpp		\
