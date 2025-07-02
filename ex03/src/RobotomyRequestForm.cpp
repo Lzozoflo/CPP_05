@@ -49,17 +49,28 @@ RobotomyRequestForm::RobotomyRequestForm( std::string &target) : AForm(target, 7
 
 
 /*------Func------*/
-
+void RobotomyRequestForm::executeAction() const
+{
+	std::cout << "Makes some drilling noises." << std::endl;
+	srand(time(0));
+	int r = rand() % 2;
+	if (r % 2 == 1)
+		std::cout << this->getName() <<" has been robotomized successfully (50% of the time)." << std::endl;
+	else
+		std::cout << "The robotomy failed." << std::endl;
+	// RobotomyRequestForm: Required grades: sign 72, exec 45
+	// Makes some drilling noises. Then, informs that <target> has been robotomized
+	// successfully 50% of the time. Otherwise, informs that the robotomy failed.
+}
 
 void RobotomyRequestForm::executeAction(Bureaucrat const & executor) const
 {
-	(void)executor;
-	// if (this->getSigned() == false)
-	// 	throw AForm::FormNotSignedExeception();
-	// else if (executor.getGrade() > this->getExecGrade())
-	// 	throw Bureaucrat::GradeTooLowException();
-	// else
-	// {
+	if (this->getSigned() == false)
+		throw AForm::FormNotSignedExeception();
+	else if (executor.getGrade() > this->getExecGrade())
+		throw Bureaucrat::GradeTooLowException();
+	else
+	{
 		std::cout << "Makes some drilling noises." << std::endl;
 		srand(time(0));
 		int r = rand() % 2;
@@ -67,7 +78,7 @@ void RobotomyRequestForm::executeAction(Bureaucrat const & executor) const
 			std::cout << this->getName() <<" has been robotomized successfully (50% of the time)." << std::endl;
 		else
 			std::cout << "The robotomy failed." << std::endl;
-	// }
+	}
 	// RobotomyRequestForm: Required grades: sign 72, exec 45
 	// Makes some drilling noises. Then, informs that <target> has been robotomized
 	// successfully 50% of the time. Otherwise, informs that the robotomy failed.

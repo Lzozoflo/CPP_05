@@ -46,16 +46,32 @@ class Bureaucrat
 		/*------func------*/
 		const std::string getName() const;
 		int getGrade() const;
+
+
+		/*------func-bonus------*/
 		void upGrade(int value);
 		void downGrade(int value);
 
 		/*------exceptions------*/
 		class GradeTooHighException : public std::exception
 		{
+			private:
+				// {
+				std::string message;
+				// }
 			public:
-				virtual const char* what() const throw() {
-					return "Grade too high.";
+				//{
+
+				// Constructeur qui prend un message personnalisé
+				GradeTooHighException(const std::string& msg) : message(msg) {}
+				virtual ~GradeTooHighException() throw() {}
+
+				// Méthode what qui renvoie le message personnalisé
+				virtual const char* what() const throw(){
+					return message.c_str();
+
 				}
+				// }
 		};
 
 		class GradeTooLowException : public std::exception

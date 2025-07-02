@@ -6,7 +6,7 @@
 /*   By: fcretin <fcretin@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/05 17:51:20 by fcretin           #+#    #+#             */
-/*   Updated: 2025/06/12 15:13:09 by fcretin          ###   ########.fr       */
+/*   Updated: 2025/07/02 13:43:48 by fcretin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,7 +37,7 @@ Bureaucrat::Bureaucrat( std::string &name, int grade )	:	_Name(name), _Grade(gra
 	if (grade > 150)
 		throw GradeTooLowException();
 	if (grade < 0)
-		throw GradeTooHighException();
+		throw GradeTooHighException("Grade too high.");
 }
 
 /*------func------*/
@@ -51,7 +51,7 @@ void Bureaucrat::upGrade(int value)
 {
 	int res = this->_Grade - value;
 	if (res < 0)
-		throw GradeTooHighException();
+		throw GradeTooHighException("Grade too high.");
 	this->_Grade = res;
 }
 

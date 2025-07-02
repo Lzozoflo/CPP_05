@@ -6,7 +6,7 @@
 /*   By: fcretin <fcretin@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/06 16:12:21 by fcretin           #+#    #+#             */
-/*   Updated: 2025/06/12 15:20:34 by fcretin          ###   ########.fr       */
+/*   Updated: 2025/07/02 16:10:32 by fcretin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -74,12 +74,14 @@ void AForm::beSigned(const Bureaucrat &employee)
 
 void AForm::execute(Bureaucrat const & executor) const
 {
+	// executeAction(executor);
+
 	if (this->getSigned() == false)
 		throw AForm::FormNotSignedExeception();
 	else if (executor.getGrade() > this->getExecGrade())
 		throw Bureaucrat::GradeTooLowException();
 	else
-		executeAction(executor);
+		executeAction();
 }
 
 

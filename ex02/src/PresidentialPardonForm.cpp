@@ -49,18 +49,21 @@ PresidentialPardonForm::PresidentialPardonForm( std::string &target) : AForm(tar
 
 /*------Func------*/
 
+void PresidentialPardonForm::executeAction() const
+{
+	std::cout << "Informs that " << this->getName() << " has been pardoned by Zaphod Beeblebrox." << std::endl;
+}
 
 void PresidentialPardonForm::executeAction(Bureaucrat const & executor) const
 {
-	(void)executor;
-	// if (this->getSigned() == false)
-	// 	throw AForm::FormNotSignedExeception();
-	// else if (executor.getGrade() > this->getExecGrade())
-	// 	throw Bureaucrat::GradeTooLowException();
-	// else
-	// {
+	if (this->getSigned() == false)
+		throw AForm::FormNotSignedExeception();
+	else if (executor.getGrade() > this->getExecGrade())
+		throw Bureaucrat::GradeTooLowException();
+	else
+	{
 		std::cout << "Informs that " << this->getName() << " has been pardoned by Zaphod Beeblebrox." << std::endl;
-	// }
+	}
 }
 
 /*------Func------*/

@@ -6,7 +6,7 @@
 /*   By: fcretin <fcretin@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/08 16:04:25 by fcretin           #+#    #+#             */
-/*   Updated: 2025/06/12 15:13:26 by fcretin          ###   ########.fr       */
+/*   Updated: 2025/07/02 16:11:05 by fcretin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,19 +30,20 @@ class PresidentialPardonForm : public AForm
 	private:
 	// {
 
-		PresidentialPardonForm( void );												//Canonical
-		PresidentialPardonForm( const PresidentialPardonForm &other );				//Canonical
+		PresidentialPardonForm( void );													//Canonical
+		PresidentialPardonForm( const PresidentialPardonForm &other );					//Canonical
 		PresidentialPardonForm &operator=( const PresidentialPardonForm &other );		//Canonical
-		~PresidentialPardonForm( void );												//Canonical
 
 	// }
 	public:
 	// {
 
+		virtual ~PresidentialPardonForm( void );										//Canonical
 
 		/*------Constructor------*/
 		PresidentialPardonForm( std::string &target);
 		void executeAction(Bureaucrat const & executor) const;
+		void executeAction() const;
 
 
 		/*------Func------*/

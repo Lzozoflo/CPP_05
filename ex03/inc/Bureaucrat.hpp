@@ -6,7 +6,7 @@
 /*   By: fcretin <fcretin@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/06 13:33:30 by fcretin           #+#    #+#             */
-/*   Updated: 2025/06/12 15:13:15 by fcretin          ###   ########.fr       */
+/*   Updated: 2025/07/02 16:01:46 by fcretin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,9 +37,9 @@ class Bureaucrat
 	public:
 	// {
 
-		Bureaucrat( void );									//Canonical
-		Bureaucrat( const Bureaucrat &b );							//Canonical
-		Bureaucrat &operator=( const Bureaucrat &b );				//Canonical
+		Bureaucrat( void );										//Canonical
+		Bureaucrat( const Bureaucrat &b );						//Canonical
+		Bureaucrat &operator=( const Bureaucrat &b );			//Canonical
 		~Bureaucrat( void );									//Canonical
 
 
@@ -60,11 +60,25 @@ class Bureaucrat
 		/*------exceptions------*/
 		class GradeTooHighException : public std::exception
 		{
+			private:
+				// {
+				std::string message;
+				// }
 			public:
-			const char* what() const throw() {
-				return "Grade too high.";
-			}
+				//{
+
+				// Constructeur qui prend un message personnalisé
+				GradeTooHighException(const std::string& msg) : message(msg) {}
+				virtual ~GradeTooHighException() throw() {}
+
+				// Méthode what qui renvoie le message personnalisé
+				virtual const char* what() const throw(){
+					return message.c_str();
+
+				}
+				// }
 		};
+
 
 		class GradeTooLowException : public std::exception
 		{

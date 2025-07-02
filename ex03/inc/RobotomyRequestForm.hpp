@@ -6,7 +6,7 @@
 /*   By: fcretin <fcretin@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/08 16:05:21 by fcretin           #+#    #+#             */
-/*   Updated: 2025/06/12 15:13:29 by fcretin          ###   ########.fr       */
+/*   Updated: 2025/07/02 16:11:10 by fcretin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,18 +31,19 @@ class RobotomyRequestForm : public AForm
 	// {
 
 		RobotomyRequestForm( void );												//Canonical
-		RobotomyRequestForm( const RobotomyRequestForm &other );				//Canonical
-		RobotomyRequestForm &operator=( const RobotomyRequestForm &other );		//Canonical
-		~RobotomyRequestForm( void );												//Canonical
+		RobotomyRequestForm( const RobotomyRequestForm &other );					//Canonical
+		RobotomyRequestForm &operator=( const RobotomyRequestForm &other );			//Canonical
 
 	// }
 	public:
 	// {
 
+		virtual ~RobotomyRequestForm( void );										//Canonical
 
 		/*------Constructor------*/
 		RobotomyRequestForm( std::string &target);
 		void executeAction(Bureaucrat const & executor) const;
+		void executeAction() const;
 
 
 		/*------Func------*/

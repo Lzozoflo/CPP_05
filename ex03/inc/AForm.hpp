@@ -6,7 +6,7 @@
 /*   By: fcretin <fcretin@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/06 13:33:43 by fcretin           #+#    #+#             */
-/*   Updated: 2025/06/12 15:20:39 by fcretin          ###   ########.fr       */
+/*   Updated: 2025/07/02 16:14:44 by fcretin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,21 +31,21 @@ class AForm
 		const std::string	_Name;
 		const int			_SignGrade;
 		const int			_ExecGrade;
-		bool				_Signed; //0 is unsigned, 1signed
+		bool				_Signed; //0/false is unsigned, 1/true signed
 
-		AForm( void );						//Canonical
+		AForm( void );									//Canonical
 		AForm( const AForm &other );					//Canonical
 		AForm &operator=( const AForm &other );			//Canonical
 
 	// }
 	public:
 	// {
-		virtual ~AForm( void );									//Canonical
+		virtual ~AForm( void );							//Canonical
 
 
 		/*------Constructor------*/
 		AForm( std::string name, int beSigned, int beExec);
-		// AForm( std::string &name, int beSigned, int beExec);
+		// AForm( std::string &name, int beSigned, int beExec); // & sometime is better sometimes not
 
 
 		/*------Func------*/
@@ -56,6 +56,7 @@ class AForm
 		void beSigned(const Bureaucrat &employee);
 		virtual void execute(Bureaucrat const & executor) const;
 		virtual void executeAction(Bureaucrat const & executor) const = 0;
+		virtual void executeAction() const = 0;
 
 
 		/*------Exceptions------*/

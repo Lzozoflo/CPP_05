@@ -6,7 +6,7 @@
 /*   By: fcretin <fcretin@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/06 13:33:43 by fcretin           #+#    #+#             */
-/*   Updated: 2025/06/13 09:09:51 by fcretin          ###   ########.fr       */
+/*   Updated: 2025/07/02 16:01:52 by fcretin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,8 +28,8 @@ class Intern
 	// }
 	public:
 	// {
-		Intern( void );						//Canonical
-		Intern( const Intern &other );					//Canonical
+		Intern( void );										//Canonical
+		Intern( const Intern &other );						//Canonical
 		Intern &operator=( const Intern &other );			//Canonical
 		~Intern( void );									//Canonical
 

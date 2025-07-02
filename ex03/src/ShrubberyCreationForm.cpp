@@ -50,15 +50,55 @@ ShrubberyCreationForm::ShrubberyCreationForm( std::string &target) : AForm(targe
 /*------Func------*/
 
 
+void ShrubberyCreationForm::executeAction() const
+{
+	std::string filename =this->getName() + "_shrubbery";
+	std::ofstream file(filename.c_str());
+
+	if (!file.is_open())
+		throw ShrubberyCreationForm::NotOpen();
+
+	file	<<"                                   .         ;" 			<< "\n" \
+			<<"      .              .              ;%     ;;"			<< "\n" \
+			<<"        ,           ,                :;%  %;"			<< "\n" \
+			<<"         :         ;                   :;%;'     .,"			<< "\n" \
+			<<",.        %;     %;            ;        %;'    ,;"			<< "\n" \
+			<<"  ;       ;%;  %%;        ,     %;    ;%;    ,%'"			<< "\n" \
+			<<"   %;       %;%;      ,  ;       %;  ;%;   ,%;'"			<< "\n" \
+			<<"    ;%;      %;        ;%;        % ;%;  ,%;'"			<< "\n" \
+			<<"     `%;.     ;%;     %;'         `;%%;.%;'"			<< "\n" \
+			<<"      `:;%.    ;%%. %@;        %; ;@%;%'"			<< "\n" \
+			<<"         `:%;.  :;bd%;          %;@%;'"			<< "\n" \
+			<<"           `@%:.  :;%.         ;@@%;'"			<< "\n" \
+			<<"             `@%.  `;@%.      ;@@%;"			<< "\n" \
+			<<"               `@%%. `@%%    ;@@%;"			<< "\n" \
+			<<"                 ;@%. :@%%  %@@%;"			<< "\n" \
+			<<"                   %@bd%%%bd%%:;"			<< "\n" \
+			<<"                     #@%%%%%:;;"			<< "\n" \
+			<<"                     %@@%%%::;"			<< "\n" \
+			<<"                     %@@@%(o);  . '"			<< "\n" \
+			<<"                     %@@@o%;:(.,'"			<< "\n" \
+			<<"                 `.. %@@@o%::;"			<< "\n" \
+			<<"                    `)@@@o%::;"			<< "\n" \
+			<<"                     %@@(o)::;"			<< "\n" \
+			<<"                    .%@@@@%::;"			<< "\n" \
+			<<"                    ;%@@@@%::;."			<< "\n" \
+			<<"                   ;%@@@@%%:;;;."			<< "\n" \
+			<<"               ...;%@@@@@%%:;;;;,.."			<< "\n";
+	file.close();
+
+	// ShrubberyCreationForm: Required grades: sign 145, exec 137
+	// Create a file <target>_shrubbery in the working directory, and writes ASCII trees
+	// inside it.
+}
 void ShrubberyCreationForm::executeAction(Bureaucrat const & executor) const
 {
-	(void)executor;
-	// if (this->getSigned() == false)
-	// 	throw AForm::FormNotSignedExeception();
-	// else if (executor.getGrade() > this->getExecGrade())
-	// 	throw Bureaucrat::GradeTooLowException();
-	// else
-	// {
+	if (this->getSigned() == false)
+		throw AForm::FormNotSignedExeception();
+	else if (executor.getGrade() > this->getExecGrade())
+		throw Bureaucrat::GradeTooLowException();
+	else
+	{
 		std::string filename =this->getName() + "_shrubbery";
 		std::ofstream file(filename.c_str());
 
@@ -93,7 +133,7 @@ void ShrubberyCreationForm::executeAction(Bureaucrat const & executor) const
 				<<"                   ;%@@@@%%:;;;."			<< "\n" \
 				<<"               ...;%@@@@@%%:;;;;,.."			<< "\n";
 		file.close();
-	// }
+	}
 
 	// ShrubberyCreationForm: Required grades: sign 145, exec 137
 	// Create a file <target>_shrubbery in the working directory, and writes ASCII trees

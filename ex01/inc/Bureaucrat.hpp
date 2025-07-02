@@ -6,7 +6,7 @@
 /*   By: fcretin <fcretin@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/06 13:33:30 by fcretin           #+#    #+#             */
-/*   Updated: 2025/06/12 15:11:17 by fcretin          ###   ########.fr       */
+/*   Updated: 2025/07/02 13:40:58 by fcretin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,8 +38,8 @@ class Bureaucrat
 	// {
 
 		Bureaucrat( void );									//Canonical
-		Bureaucrat( const Bureaucrat &b );							//Canonical
-		Bureaucrat &operator=( const Bureaucrat &b );				//Canonical
+		Bureaucrat( const Bureaucrat &b );						//Canonical
+		Bureaucrat &operator=( const Bureaucrat &b );			//Canonical
 		~Bureaucrat( void );									//Canonical
 
 
@@ -50,20 +50,34 @@ class Bureaucrat
 		/*------func------*/
 		const std::string getName() const;
 		int getGrade() const;
+		void signForm( Form &f);
+
+		/*------func-bonus------*/
 		void upGrade(int value);
 		void downGrade(int value);
-		void signForm( Form &f);
 
 
 		/*------exceptions------*/
 		class GradeTooHighException : public std::exception
 		{
+			private:
+				// {
+				std::string message;
+				// }
 			public:
-			const char* what() const throw() {
-				return "Grade too high.";
-			}
-		};
+				//{
 
+				// Constructeur qui prend un message personnalisé
+				GradeTooHighException(const std::string& msg) : message(msg) {}
+				virtual ~GradeTooHighException() throw() {}
+
+				// Méthode what qui renvoie le message personnalisé
+				virtual const char* what() const throw(){
+					return message.c_str();
+
+				}
+				// }
+		};
 		class GradeTooLowException : public std::exception
 		{
 			public:

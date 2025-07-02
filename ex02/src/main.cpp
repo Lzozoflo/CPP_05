@@ -6,7 +6,7 @@
 /*   By: fcretin <fcretin@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/25 11:06:45 by fcretin           #+#    #+#             */
-/*   Updated: 2025/06/12 15:18:28 by fcretin          ###   ########.fr       */
+/*   Updated: 2025/07/02 16:08:18 by fcretin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,7 @@ int main()
 
 	// try
 	// {
-	// 	throw Bureaucrat::GradeTooHighException();
+	// 	throw Bureaucrat::GradeTooHighException("Grade too high.");
 	// }
 	// catch (const std::exception &e)
 	// {

@@ -6,7 +6,7 @@
 /*   By: fcretin <fcretin@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/08 16:05:26 by fcretin           #+#    #+#             */
-/*   Updated: 2025/06/12 15:13:31 by fcretin          ###   ########.fr       */
+/*   Updated: 2025/07/02 16:11:16 by fcretin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,11 +38,12 @@ class ShrubberyCreationForm : public AForm
 	public:
 	// {
 
-		~ShrubberyCreationForm( void );												//Canonical
+		virtual ~ShrubberyCreationForm( void );										//Canonical
 
 		/*------Constructor------*/
 		ShrubberyCreationForm( std::string &target);
 		void executeAction(Bureaucrat const & executor) const;
+		void executeAction() const;
 
 
 		/*------Func------*/

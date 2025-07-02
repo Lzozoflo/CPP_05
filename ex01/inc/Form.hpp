@@ -6,7 +6,7 @@
 /*   By: fcretin <fcretin@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/06 13:33:43 by fcretin           #+#    #+#             */
-/*   Updated: 2025/06/12 15:11:09 by fcretin          ###   ########.fr       */
+/*   Updated: 2025/07/02 13:29:12 by fcretin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,12 +59,24 @@ class Form
 		/*------Exceptions------*/
 		class GradeTooHighException : public std::exception
 		{
+			private:
+				// {
+				std::string message;
+				// }
 			public:
-			const char* what() const throw() {
-				return "Grade too high.";
-			}
-		};
+				//{
 
+				// Constructeur qui prend un message personnalisé
+				GradeTooHighException(const std::string& msg) : message(msg) {}
+				virtual ~GradeTooHighException() throw() {}
+
+				// Méthode what qui renvoie le message personnalisé
+				virtual const char* what() const throw(){
+					return message.c_str();
+
+				}
+				// }
+		};
 		class GradeTooLowException : public std::exception
 		{
 			public:
