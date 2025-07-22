@@ -35,23 +35,20 @@ class Bureaucrat
 	public:
 	// {
 
-		Bureaucrat( void );									//Canonical
-		Bureaucrat( const Bureaucrat &b );							//Canonical
-		Bureaucrat &operator=( const Bureaucrat &b );				//Canonical
-		~Bureaucrat( void );									//Canonical
-
+		/*------Canonical------*/
+		Bureaucrat( void );
+		Bureaucrat( const Bureaucrat &b );
+		Bureaucrat &operator=( const Bureaucrat &b );
+		~Bureaucrat( void );
 
 		/*------Constructor------*/
 		Bureaucrat( std::string &name, int grade );
 		/*------func------*/
 		const std::string getName() const;
 		int getGrade() const;
-
-
 		/*------func-bonus------*/
 		void upGrade(int value);
 		void downGrade(int value);
-
 		/*------exceptions------*/
 		class GradeTooHighException : public std::exception
 		{
