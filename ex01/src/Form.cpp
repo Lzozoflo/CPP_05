@@ -6,7 +6,7 @@
 /*   By: fcretin <fcretin@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/06 16:12:21 by fcretin           #+#    #+#             */
-/*   Updated: 2025/06/12 15:11:02 by fcretin          ###   ########.fr       */
+/*   Updated: 2025/07/23 13:24:50 by fcretin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,9 +41,19 @@ Form::~Form( void )
 
 /*------Constructor------*/
 
-Form::Form( std::string &name, int beSigned, int beExec) : _Name(name), _SignGrade(beSigned), _ExecGrade(beExec), _Signed(false)
-{}
 
+Form::Form( std::string &name, int beSigned, int beExec) : _Name(name), _SignGrade(beSigned), _ExecGrade(beExec), _Signed(false)
+{
+	if (beSigned > 150)
+		throw Form::GradeTooLowException();
+	if (beSigned <= 0)
+		throw Form::GradeTooHighException("Grade too high");
+
+	if (beExec > 150)
+		throw Form::GradeTooLowException();
+	if (beExec <= 0)
+		throw Form::GradeTooHighException("Grade too high");
+}
 
 /*------Constructor------*/
 

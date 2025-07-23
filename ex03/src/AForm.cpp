@@ -6,7 +6,7 @@
 /*   By: fcretin <fcretin@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/06 16:12:21 by fcretin           #+#    #+#             */
-/*   Updated: 2025/07/02 16:04:28 by fcretin          ###   ########.fr       */
+/*   Updated: 2025/07/23 13:26:33 by fcretin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,7 +42,17 @@ AForm::~AForm( void )
 /*------Constructor------*/
 
 AForm::AForm( std::string name, int beSigned, int beExec) : _Name(name), _SignGrade(beSigned), _ExecGrade(beExec), _Signed(false)
-{}
+{
+	if (beSigned > 150)
+		throw AForm::GradeTooLowException();
+	if (beSigned <= 0)
+		throw AForm::GradeTooHighException("Grade too high");
+
+	if (beExec > 150)
+		throw AForm::GradeTooLowException();
+	if (beExec <= 0)
+		throw AForm::GradeTooHighException("Grade too high");
+}
 // AForm::AForm( std::string &name, int beSigned, int beExec) : _Name(name), _SignGrade(beSigned), _ExecGrade(beExec), _Signed(false)
 // {}
 
